@@ -1,6 +1,7 @@
 import React from 'react';
 import Summary from '../Summary/Summary';
 import './MainSummary.css';
+
 export default function MainSummary({ selected, USCurrencyFormat }) {
   const total = Object.keys(selected).reduce(
     (acc, curr) => acc + selected[curr].cost,
@@ -11,6 +12,7 @@ export default function MainSummary({ selected, USCurrencyFormat }) {
       <h2>Your cart</h2>
       {Object.keys(selected).map((feature, idx) => (
         <Summary
+          key={idx}
           selected={selected}
           feature={feature}
           idx={idx}
